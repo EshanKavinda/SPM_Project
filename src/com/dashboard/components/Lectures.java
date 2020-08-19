@@ -5,6 +5,10 @@
  */
 package com.dashboard.components;
 
+import com.dashboard.subcomponents.AddLectures;
+import com.dashboard.subcomponents.ViewLectures;
+import javax.swing.JTabbedPane;
+
 /**
  *
  * @author ESHAN
@@ -14,8 +18,11 @@ public class Lectures extends javax.swing.JPanel {
     /**
      * Creates new form Lectures
      */
-    public Lectures() {
+    private JTabbedPane jTabbedPane;
+    
+    public Lectures(JTabbedPane jTabbedPane) {
         initComponents();
+        this.jTabbedPane = jTabbedPane;
     }
 
     /**
@@ -27,30 +34,60 @@ public class Lectures extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        addLecturersBtn = new javax.swing.JButton();
+        viewLecturersBtn = new javax.swing.JButton();
 
-        jLabel1.setText("Lectures");
+        addLecturersBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icons/Add-Folder-icon_1.png"))); // NOI18N
+        addLecturersBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addLecturersBtnActionPerformed(evt);
+            }
+        });
+
+        viewLecturersBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/icons/Actions-view-calendar-list-icon.png"))); // NOI18N
+        viewLecturersBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewLecturersBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(374, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap(380, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(173, Short.MAX_VALUE)
+                .addComponent(addLecturersBtn)
+                .addGap(26, 26, 26)
+                .addComponent(viewLecturersBtn)
+                .addContainerGap(176, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(234, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap(249, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(182, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(viewLecturersBtn)
+                    .addComponent(addLecturersBtn))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void addLecturersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addLecturersBtnActionPerformed
+        // TODO add your handling code here:
+        jTabbedPane.remove(0);
+        jTabbedPane.add("Add Lecturers", new AddLectures());
+    }//GEN-LAST:event_addLecturersBtnActionPerformed
+
+    private void viewLecturersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewLecturersBtnActionPerformed
+        // TODO add your handling code here:
+        jTabbedPane.remove(0);
+        jTabbedPane.add("View Lecturers", new ViewLectures());
+    }//GEN-LAST:event_viewLecturersBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton addLecturersBtn;
+    private javax.swing.JButton viewLecturersBtn;
     // End of variables declaration//GEN-END:variables
 }
