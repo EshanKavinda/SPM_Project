@@ -21,6 +21,11 @@ public class Lecturer {
     private String level;
     private String rank;
 
+    public Lecturer() {
+    }
+    
+    
+
     public Lecturer(int lectureId, String lecturername, String employeeId, String faculty, String department, String center, String building, String level, String rank) {
         this.lectureId = lectureId;
         this.lecturername = lecturername;

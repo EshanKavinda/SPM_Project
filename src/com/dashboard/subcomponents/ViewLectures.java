@@ -6,6 +6,8 @@
 package com.dashboard.subcomponents;
 
 import com.dashboard.components.*;
+import com.services.LecturerService;
+import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -18,6 +20,8 @@ public class ViewLectures extends javax.swing.JPanel {
      */
     public ViewLectures() {
         initComponents();
+        LecturerService service = new LecturerService();
+        viewLecturersTable.setModel(DbUtils.resultSetToTableModel(service.tableLoadLecturers()));
     }
 
     /**
@@ -31,9 +35,9 @@ public class ViewLectures extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        viewLecturersTable = new javax.swing.JTable();
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        viewLecturersTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -44,7 +48,7 @@ public class ViewLectures extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(viewLecturersTable);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -85,6 +89,6 @@ public class ViewLectures extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable viewLecturersTable;
     // End of variables declaration//GEN-END:variables
 }

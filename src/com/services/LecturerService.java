@@ -45,16 +45,29 @@ public class LecturerService {
             System.out.println("DB status: "+result);
         } catch (Exception ex) {
             System.out.println(ex.toString());
-            //Logger.getLogger(Services.class.getName()).log(Level.SEVERE, null, ex);
         }finally {		
                  // Services.colsedConnections();
         }  
     }
     
-    public static void main(String[] args) {
-        LecturerService lecturerService = new LecturerService();
-        Lecturer lecturer = new Lecturer(0, "abcd", "123456", "computing", "OC", "Malabe", "new", "level", "rank");
-        lecturerService.addLecture(lecturer);
-    }
+    public ResultSet tableLoadLecturers(){
+        String loadQueary = "SELECT * FROM lecturers";
+        try {
+                connection = SQLite_Connection.connect();
+                preparedStatement = connection.prepareStatement(loadQueary);
+                resultSet = preparedStatement.executeQuery();
+            } catch (Exception ex) {
+                System.out.println(ex.toString());
+            }finally {		
+                      //Services.colsedConnections();
+            }
+        return resultSet;
+}
+    
+//    public static void main(String[] args) {
+//        LecturerService lecturerService = new LecturerService();
+//        Lecturer lecturer = new Lecturer(0, "abcd", "123456", "computing", "OC", "Malabe", "new", "level", "rank");
+//        lecturerService.addLecture(lecturer);
+//    }
     
 }
