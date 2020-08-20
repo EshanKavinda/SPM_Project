@@ -3,21 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ESHAN/Desktop/SPM%20Project/SPM_Project/src/com/dashboard/components/TimeTable.java</file>
-            <file>file:/C:/Users/ESHAN/Desktop/SPM%20Project/SPM_Project/src/com/dashboard_main/Dashboard.java</file>
-            <file>file:/C:/Users/ESHAN/Desktop/SPM%20Project/SPM_Project/src/com/dashboard/components/Lectures.java</file>
-            <file>file:/C:/Users/ESHAN/Desktop/SPM%20Project/SPM_Project/src/com/dashboard/subcomponents/ViewLectures.java</file>
-            <file>file:/C:/Users/ESHAN/Desktop/SPM%20Project/SPM_Project/src/com/dashboard/subcomponents/AddLectures.java</file>
+            <file>file:/C:/Users/ESHAN/Desktop/SPM%20Project/SPM_Project/src/com/dashboard/subcomponents/NumberOfDays.java</file>
+            <file>file:/C:/Users/ESHAN/Desktop/SPM%20Project/SPM_Project/src/com/util/db/DB_Connection.java</file>
+            <file>file:/C:/Users/ESHAN/Desktop/SPM%20Project/SPM_Project/src/com/dashboard/subcomponents/TimeLog.java</file>
+            <file>file:/C:/Users/ESHAN/Desktop/SPM%20Project/SPM_Project/src/com/dashboard/subcomponents/Days.java</file>
             <file>file:/C:/Users/ESHAN/Desktop/SPM%20Project/SPM_Project/src/com/dashboard/components/WorkingDaysAndHours.java</file>
-        </group>
-    </open-files>
-</project-private>
-<?xml version="1.0" encoding="UTF-8"?>
-<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/ESHAN/Desktop/SPM%20Project/SPM_Project/src/com/util/db/SQLite_Connection.java</file>
+            <file>file:/C:/Users/ESHAN/Desktop/SPM%20Project/SPM_Project/src/com/dashboard/subcomponents/TimeSlots.java</file>
         </group>
     </open-files>
 </project-private>

@@ -14,8 +14,13 @@ import java.sql.SQLException;
  * @author ESHAN
  */
 public class SQLite_Connection {
+
+    public SQLite_Connection() {
+    }
     
-    public static void connect() {
+    
+    
+    public static Connection connect() {
         Connection conn = null;
         try {
             // db parameters
@@ -25,24 +30,29 @@ public class SQLite_Connection {
             
             System.out.println("Connection to SQLite has been established.");
             
+            return conn;
+            
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-        } finally {
-            try {
-                if (conn != null) {
-                    conn.close();
-                }
-            } catch (SQLException ex) {
-                System.out.println(ex.getMessage());
-            }
-        }
+            return  null;
+        } 
+//        finally {
+//            try {
+//                if (conn != null) {
+//                    conn.close();
+//                }
+//            } catch (SQLException ex) {
+//                System.out.println(ex.getMessage());
+//            }
+//        }
+        
     }
     
-    public static void main(String[] args) {
-        
-        connect();
-        
-    }
+//    public static void main(String[] args) {
+//        
+//        connect();
+//        
+//    }
  
     
 }
