@@ -6,6 +6,8 @@
 package com.dashboard.subcomponents;
 
 import com.dashboard.components.*;
+import com.models.Lecturer;
+import com.services.LecturerService;
 
 /**
  *
@@ -18,6 +20,9 @@ public class AddLectures extends javax.swing.JPanel {
      */
     public AddLectures() {
         initComponents();
+        
+        
+        
     }
 
     /**
@@ -154,8 +159,8 @@ public class AddLectures extends javax.swing.JPanel {
                         .addComponent(jLabel6)
                         .addGap(26, 26, 26))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(center_jComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14)))
+                        .addComponent(center_jComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(building_jComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -171,6 +176,11 @@ public class AddLectures extends javax.swing.JPanel {
         );
 
         addLecturesBtn.setText("Add lectures");
+        addLecturesBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addLecturesBtnActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Cancel");
 
@@ -237,6 +247,22 @@ public class AddLectures extends javax.swing.JPanel {
     private void center_jComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_center_jComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_center_jComboBoxActionPerformed
+
+    private void addLecturesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addLecturesBtnActionPerformed
+        // TODO add your handling code here:
+        Lecturer lecturer = new Lecturer();
+        lecturer.setLecturername(lname.getText().toString());
+        lecturer.setEmployeeId(eid.getText().toString());
+        lecturer.setFaculty(faculty_jComboBox.getSelectedItem().toString());
+        lecturer.setDepartment(department_jComboBox.getSelectedItem().toString());
+        lecturer.setCenter(center_jComboBox.getSelectedItem().toString());
+        lecturer.setBuilding(building_jComboBox.getSelectedItem().toString());
+        lecturer.setLevel(level_jComboBox.getSelectedItem().toString());
+        lecturer.setRank(rank.getText().toString());
+        
+        LecturerService lecturerService = new LecturerService();
+        lecturerService.addLecture(lecturer);
+    }//GEN-LAST:event_addLecturesBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

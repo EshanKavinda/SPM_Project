@@ -10,10 +10,6 @@ import com.util.db.SQLite_Connection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.sqlite.SQLiteConnection;
 
 /**
  *
@@ -45,20 +41,29 @@ public class LecturerService {
             System.out.println("DB status: "+result);
         } catch (Exception ex) {
             System.out.println(ex.toString());
-            //Logger.getLogger(Services.class.getName()).log(Level.SEVERE, null, ex);
         }finally {		
                  // Services.colsedConnections();
         }  
     }
     
-    public static void main(String[] args) {
-        LecturerService lecturerService = new LecturerService();
-        Lecturer lecturer = new Lecturer(0, "abcd", "123456", "computing", "OC", "Malabe", "new", "level", "rank");
-        Lecturer lecturer2 = new Lecturer(0, "abcd", "123456", "eng", "OC", "Malabe", "new", "level", "rank");
-
-        lecturerService.addLecture(lecturer);
-        lecturerService.addLecture(lecturer2);
-
-    }
+    public ResultSet tableLoadLecturers(){
+        String loadQueary = "SELECT * FROM lecturers";
+        try {
+                connection = SQLite_Connection.connect();
+                preparedStatement = connection.prepareStatement(loadQueary);
+                resultSet = preparedStatement.executeQuery();
+            } catch (Exception ex) {
+                System.out.println(ex.toString());
+            }finally {		
+                      //Services.colsedConnections();
+            }
+        return resultSet;
+}
+    
+//    public static void main(String[] args) {
+//        LecturerService lecturerService = new LecturerService();
+//        Lecturer lecturer = new Lecturer(0, "abcd", "123456", "computing", "OC", "Malabe", "new", "level", "rank");
+//        lecturerService.addLecture(lecturer);
+//    }
     
 }
