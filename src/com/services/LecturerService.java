@@ -54,7 +54,11 @@ public class LecturerService {
     public static void main(String[] args) {
         LecturerService lecturerService = new LecturerService();
         Lecturer lecturer = new Lecturer(0, "abcd", "123456", "computing", "OC", "Malabe", "new", "level", "rank");
+        Lecturer lecturer2 = new Lecturer(0, "abcd", "123456", "eng", "OC", "Malabe", "new", "level", "rank");
+
         lecturerService.addLecture(lecturer);
+        lecturerService.addLecture(lecturer2);
+
     }
     
 }
